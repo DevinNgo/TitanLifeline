@@ -1,5 +1,6 @@
 import './App.css';
 import SvgMap from "./components/SvgMap.jsx";
+import DateTime from "./components/DateTime.jsx";
 
 function App() {
 
@@ -7,8 +8,9 @@ function App() {
     <> 
       <h1 className="text-3xl font-bold text-center">
         Titan Lifeline
+        <DateTime/>
       </h1>
-      <section class="mapdiv">
+      <section className="mapdiv">
         <SvgMap/>
       </section>
     </>
