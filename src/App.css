@@ -1,0 +1,83 @@
+.mapdiv
+{
+    width: 35%;
+    margin: auto;
+}
+
+/*Lot A*/
+#LotA
+{
+    display: inline;
+    fill: #ffaaaa;
+    fill-opacity: 1;
+}
+
+#LotA:hover
+{
+    filter: brightness(115%);
+}
+
+/*Lot G*/
+#LotG
+{
+    display: inline;
+    fill: #ffaaaa;
+    fill-opacity: 1;
+}
+
+#LotG:hover
+{
+    filter: brightness(115%);
+}
+
+/*SCPS*/
+#SCPS
+{
+    display: inline;
+    fill: #ffaaaa;
+    fill-opacity: 1;
+}
+
+#SCPS:hover
+{
+    filter: brightness(115%);
+}
+
+/*NPS*/
+#NPS
+{
+    display: inline;
+    fill: #ffaaaa;
+    fill-opacity: 1;
+}
+
+#NPS:hover
+{
+    filter: brightness(115%);
+}
+
+/*EPS-S*/
+#EPSS
+{
+    display: inline;
+    fill: #ffaaaa;
+    fill-opacity: 1;
+}
+
+#EPSS:hover
+{
+    filter: brightness(115%);
+}
+
+/*EPS-N*/
+#EPSN
+{
+    display: inline;
+    fill: #ffaaaa;
+    fill-opacity: 1;
+}
+
+#EPSN:hover
+{
+    filter: brightness(115%);
+}
