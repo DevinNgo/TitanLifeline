@@ -1,6 +1,4 @@
 import * as React from "react";
-import '../App.css';
-
 const SvgMap = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -44,16 +42,6 @@ const SvgMap = (props) => (
       style={{
         fill: "#b3b3b3",
         stroke: "#ccc",
-      }}
-    />
-    {/* Lot A */}
-    <path
-      id="LotA"
-      d="M103.114 36.442h164.815v117.193s-19.877 16.15-20.705 47.209c-.828 31.058 0 92.346 0 92.346H103.942Z"
-      style={{
-        display: "inline",
-        fill: "#faa",
-        fillOpacity: 1,
       }}
     />
     <rect
@@ -148,22 +136,17 @@ const SvgMap = (props) => (
         fillOpacity: 1,
       }}
     />
-    {/* Lot G */}
-    <rect
-      id="LotG"
-      width={119.264}
-      height={85.721}
-      x={289.463}
-      y={36.442}
-      rx={5}
+    <path
+      id = "LotAG"
+      className = "StudentLot"
+      d="M294.463 36.442h109.264c2.77 0 5 2.23 5 5v75.72c0 2.77-2.23 5-5 5H294.463c-2.77 0-5-2.23-5-5v-75.72c0-2.77 2.23-5 5-5m-191.35 0H267.93v117.193s-19.877 16.15-20.705 47.209c-.828 31.058 0 92.346 0 92.346H103.942Z"
       style={{
         fill: "#faa",
-        fillOpacity: 1,
       }}
     />
-    {/* SCPS */}
     <rect
-      id="SCPS"
+      id = "SCPS"
+      className = "StudentLot"
       width={61.288}
       height={107.669}
       x={142.454}
@@ -174,9 +157,9 @@ const SvgMap = (props) => (
         fillOpacity: 1,
       }}
     />
-    {/* NPS */}
     <rect
-      id="NPS"
+      id = "NPS"
+      className = "StudentLot"
       width={166.887}
       height={82.822}
       x={89.034}
@@ -187,9 +170,9 @@ const SvgMap = (props) => (
         fillOpacity: 1,
       }}
     />
-    {/* EPS - S */}
     <rect
-      id="EPSS"
+      id = "EPSS"
+      className = "StudentLot"
       width={98.972}
       height={92.761}
       x={677.071}
@@ -200,9 +183,9 @@ const SvgMap = (props) => (
         fillOpacity: 1,
       }}
     />
-    {/* EPS - N */}
     <rect
-      id="EPSN"
+      id = "EPSN"
+      className = "StudentLot"
       width={98.972}
       height={92.761}
       x={677.071}

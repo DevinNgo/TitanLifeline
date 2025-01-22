@@ -6,13 +6,11 @@ function App() {
 
   return (
     <> 
-      <h1 className="text-3xl font-bold text-center">
+      <h1 className="text-4xl font-bold text-center">
         Titan Lifeline
         <DateTime/>
       </h1>
-      <section className="mapdiv">
         <SvgMap/>
-      </section>
     </>
   )
 }
