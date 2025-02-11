@@ -37,8 +37,9 @@ const SvgMap = (props) => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlSpace="preserve"
-        width={901.104}
-        height={1348.343}
+        width="45vw"
+        height="90vh"
+        viewBox="0 0 901.104 1348.343"
         {...props}
       >
         <path
@@ -85,7 +86,7 @@ const SvgMap = (props) => {
           y={1164.362}
           rx={5}
           style={{
-            fill: "#a0d8f3",
+            fill: "#CBC3E3",
           }}
         />
         <rect
@@ -95,7 +96,7 @@ const SvgMap = (props) => {
           y={1237.195}
           rx={5}
           style={{
-            fill: "#a0d8f3",
+            fill: "#CBC3E3",
           }}
         />
         <rect
@@ -105,7 +106,7 @@ const SvgMap = (props) => {
           y={801.617}
           rx={5}
           style={{
-            fill: "#a0d8f3",
+            fill: "#CBC3E3",
           }}
         />
         <rect
@@ -115,7 +116,7 @@ const SvgMap = (props) => {
           y={733.028}
           rx={5}
           style={{
-            fill: "#a0d8f3",
+            fill: "#CBC3E3",
           }}
         />
         <rect
@@ -125,20 +126,20 @@ const SvgMap = (props) => {
           y={1034.255}
           rx={5}
           style={{
-            fill: "#a0d8f3",
+            fill: "#CBC3E3",
           }}
         />
         <path
           d="M745.204 358.344h30.082c.42 0 .757.337.757.757v262.941c0 .42-.338.757-.757.757h-30.082a.756.756 0 0 1-.758-.757V359.101c0-.42.338-.757.758-.757M686.29 595.556h84.752c2.77 0 5 2.23 5 5V736.22c0 2.77-2.23 5-5 5H686.29c-2.77 0-5-2.23-5-5V600.556c0-2.77 2.23-5 5-5"
           style={{
-            fill: "#a0d8f3",
+            fill: "#CBC3E3",
             strokeWidth: 1.25444,
           }}
         />
         <path
           d="M136.509 305.22v97.216h110.686v-45.68h-66.763v-51.537z"
           style={{
-            fill: "#a0d8f3",
+            fill: "#CBC3E3",
           }}
         />
         <rect
@@ -148,7 +149,7 @@ const SvgMap = (props) => {
           y={482.712}
           rx={5.789}
           style={{
-            fill: "#a0d8f3",
+            fill: "#CBC3E3",
             strokeWidth: 1.12692,
           }}
         />
@@ -159,7 +160,7 @@ const SvgMap = (props) => {
           y={500.389}
           rx={5}
           style={{
-            fill: "#a0d8f3",
+            fill: "#CBC3E3",
           }}
         />
         <path
@@ -277,8 +278,8 @@ const SvgMap = (props) => {
       <div
         style={{
           position: "absolute",
-          top: cursorPosition.y + 10,
-          left: cursorPosition.x + 10,
+          top: cursorPosition.y-100,
+          left: cursorPosition.x,
           background: "white",
           border: "1px solid gray",
           borderRadius: "5px",
