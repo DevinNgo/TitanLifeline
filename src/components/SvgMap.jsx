@@ -37,8 +37,7 @@ const SvgMap = (props) => {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlSpace="preserve"
-        width="45vw"
-        height="90vh"
+        height="85vh"
         viewBox="0 0 901.104 1348.343"
         {...props}
       >
@@ -277,14 +276,15 @@ const SvgMap = (props) => {
     hovered && (
       <div
         style={{
-          position: "absolute",
-          top: cursorPosition.y-100,
-          left: cursorPosition.x,
+          position: "fixed",
+          top: cursorPosition.y-20,
+          left: cursorPosition.x+20,
           background: "white",
           border: "1px solid gray",
           borderRadius: "5px",
           padding: "5px",
           pointerEvents: "none",
+          zIndex: 9999,
         }}
       >
         <strong>{hovered}</strong>: {values[hovered]} available spaces

@@ -13,13 +13,11 @@ function App() {
         <DateTime/>
         <BasicTimePicker/>
       </h1>
-      <div className="flex">
-        <div className="flex-1">
+      <div className="flex justify-center">
           <SvgMap/>
-        </div>
-        <div className="flex-1">
-          <Legend/>
-        </div>
+          <div className="pl-8">
+            <Legend/>
+          </div>
       </div>
     </>
   )
