@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../App.css';
 import dayjs from 'dayjs';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -14,7 +15,8 @@ export default function BasicTimePicker() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <TimePicker
-        label="Check availability at X:XX"
+        className="TimePicker"
+        label="Choose a time to park:"
         value={selectedTime} // Set the current time as the value
         onChange={handleTimeChange} // Update the state when a new time is selected
       />

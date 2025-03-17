@@ -7,3 +7,28 @@
 {
     width: 45vw
 }
+
+table {
+
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+td {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    vertical-align: middle;
+}
+.aps_link {
+    text-decoration: none;
+    font-size: 18px;
+}
+.aps_link:hover {
+    text-decoration: underline;
+}
+.spots {
+    font-size: 36px;
+    font-weight: bold;
+}
+.details {
+    font-size: 14px;
+}
