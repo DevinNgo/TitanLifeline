@@ -9,18 +9,25 @@ function App() {
 
   return (
     <div className="home"> 
-      <h1 className="text-4xl font-bold text-center">
-        Titan Lifeline
-        <DateTime/>
+      <div className="header font-bold text-center">
+        <h1 className="text-4xl pt-2">
+          Titan Lifeline
+        </h1>
+        <h1 className="text-2xl pb-2">
+          <DateTime/>
+        </h1>
         <BasicTimePicker/>
-      </h1>
-      <div className="flex justify-center">
+      </div>
+      <div className="flex justify-center pt-2">
           <SvgMap/>
           <div className="pl-8 hidden md:block">
+            <h1>
+              Legend
+            </h1>
             <Legend/>
           </div>
       </div>
-      <div className="flex justify-center border">
+      <div className="flex justify-center border p-4">
         <CurrentAvailability/>
       </div>
     </div>
