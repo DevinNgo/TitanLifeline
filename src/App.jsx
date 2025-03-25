@@ -1,40 +1,32 @@
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+
 import './App.css';
-import SvgMap from "./components/SvgMap.jsx";
-import DateTime from "./components/DateTime.jsx";
-import Legend from "./components/Legend.jsx";
+import Header from "./components/Header.jsx";
 import Home from "./Home";
-import CurrentAvailability from './components/CurrentAvailability.jsx';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Login from "./Login";
+import Prediction from "./Prediction";
 
 function App() {
 
   return (
-    <div className="home"> 
-      <div className="header font-bold text-center">
-        <h1 className="text-4xl pt-2">
-          Titan Lifeline
-        </h1>
-        <h1 className="text-2xl pb-2">
-          <DateTime/>
-        </h1>
-        <button className="bg-indigo-300 hover:bg-indigo-400 text-white font-bold py-2 px-4 rounded">
-          Check future parking availability!
-        </button>
+    <BrowserRouter>
+      <div className="App"> 
+        <div className="header font-bold text-center">
+          <Header/>
+        </div>
+        <div className="Content">
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/prediction" element={<Prediction/>}/>
+          </Routes>
+        </div>
       </div>
-      <div className="flex justify-center pt-2">
-          <SvgMap/>
-          <div className="pl-8 hidden md:block">
-            <h1 className="font-bold">
-              Legend
-            </h1>
-            <Legend/>
-          </div>
-      </div>
-      <div className="flex justify-center border p-4">
-        <CurrentAvailability/>
-      </div>
-    </div>
-  )
+    </BrowserRouter>
+    
+  );
 }
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 export default App
