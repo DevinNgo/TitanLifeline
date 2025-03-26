@@ -34,6 +34,7 @@ const SvgMap = (props) => {
   
   return (
     <div onMouseMove={handleMouseMove} style={{ position: "relative" }}>
+      <h1 className="font-bold">Campus Map</h1>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlSpace="preserve"
@@ -284,7 +285,7 @@ const SvgMap = (props) => {
           borderRadius: "5px",
           padding: "5px",
           pointerEvents: "none",
-          zIndex: 9999,
+          zIndex: 999,
         }}
       >
         <strong>{hovered}</strong>: {values[hovered]} available spaces

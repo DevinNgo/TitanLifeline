@@ -4,7 +4,7 @@ import '../App.css';
 function CurrentAvailability() {
     return (
       <div>
-        <h1 className = "text-xl">Available Parking Spaces</h1>
+        <h1 className = "font-bold">Available Parking Spaces</h1>
 
         <table>
             <tr>

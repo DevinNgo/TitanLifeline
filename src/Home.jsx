@@ -1,25 +1,23 @@
 import './App.css';
+import Modal from "./components/Modal.jsx";
 import SvgMap from "./components/SvgMap.jsx";
 import Legend from "./components/Legend.jsx";
 import CurrentAvailability from './components/CurrentAvailability.jsx';
 
 function Home() {
-
   return (
     <div className="home">
-       <div className="header font-bold text-center">
-        <button className="bg-indigo-300 hover:bg-indigo-400 text-white font-bold py-2 px-4 rounded">
-          Check future parking availability!
-        </button>
+      <div className="header font-bold text-center">
+        <Modal/>
       </div>
-      <div className="flex justify-center pt-2">
-          <div className="">
+      <div className="flex justify-center pt-4 divide-x-2 divide-gray-200">
+          <div className="px-4 hidden md:block">
             <SvgMap/>
           </div>
-          <div className="pl-8 hidden md:block">
+          <div className="px-4 hidden md:block">
             <Legend/>
           </div>
-          <div className="hidden lg:block">
+          <div className="px-4 hidden lg:block">
             <CurrentAvailability/>
           </div>
       </div>
