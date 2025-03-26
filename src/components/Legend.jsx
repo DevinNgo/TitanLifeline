@@ -3,6 +3,9 @@ import React from 'react'
 function Legend() {
   return (
     <div>
+      <h1 className="font-bold">
+        Legend
+      </h1>
       <ul>
         <li>A - Lot A</li>
         <li>CP - College Park</li>

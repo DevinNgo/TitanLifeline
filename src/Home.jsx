@@ -13,15 +13,17 @@ function Home() {
         </button>
       </div>
       <div className="flex justify-center pt-2">
-          <SvgMap/>
+          <div className="">
+            <SvgMap/>
+          </div>
           <div className="pl-8 hidden md:block">
-            <h1 className="font-bold">
-              Legend
-            </h1>
             <Legend/>
           </div>
+          <div className="hidden lg:block">
+            <CurrentAvailability/>
+          </div>
       </div>
-      <div className="flex justify-center border p-4">
+      <div className="flex justify-center border p-4 lg:hidden">
         <CurrentAvailability/>
       </div>
     </div>
