@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BasicTimePicker from "./TimePicker.jsx"
 import "./Modal.css";
 
 export default function Modal() {
@@ -25,16 +26,11 @@ export default function Modal() {
             <div onClick={toggleModal} className="overlay"></div>
             <div className="modal-content">
                 <h2>Check future parking availability</h2>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-                perferendis suscipit officia recusandae, eveniet quaerat assumenda
-                id fugit, dignissimos maxime non natus placeat illo iusto!
-                Sapiente dolorum id maiores dolores? Illum pariatur possimus
-                quaerat ipsum quos molestiae rem aspernatur dicta tenetur. Sunt
-                placeat tempora vitae enim incidunt porro fuga ea.
-                </p>
-                <button className="close-modal" onClick={toggleModal}>
-                CLOSE
+                <div className="select-time py-4">
+                    <BasicTimePicker/>
+                </div>
+                <button className="close-modal bg-indigo-300 hover:bg-indigo-400 text-white font-bold py-2 px-4 rounded" onClick={toggleModal}>
+                    CLOSE
                 </button>
             </div>
             </div>

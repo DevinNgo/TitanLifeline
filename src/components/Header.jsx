@@ -4,7 +4,7 @@ import DateTime from "./DateTime.jsx";
 function Header()
 {
     return (
-        <div className="header font-bold text-center pt-4">
+      <div className="header font-bold text-center pt-4">
         <a href="/" className="text-4xl hover:text-gray-600">
           Titan Lifeline
         </a>
