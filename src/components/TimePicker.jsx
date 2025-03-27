@@ -4,7 +4,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
-let selectedTime = null;
+let selectedTime = null; //use selectedTime to GET selectedTime from flask backend API after button is pressed
 
 export default function BasicTimePicker() {
   const [time, setTime] = useState(null); // Local state for UI updates
