@@ -1,9 +1,11 @@
 import './App.css';
+import LoginSignup from './components/LoginSignup.jsx'
+
 function Login() 
 {
     return (
         <h1>
-            Login
+            <LoginSignup/>
         </h1>
     )
 }
