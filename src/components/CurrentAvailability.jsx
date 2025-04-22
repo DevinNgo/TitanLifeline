@@ -1,59 +1,49 @@
-import * as React from "react";
-import '../App.css';
+import React, { useEffect, useState } from "react";
+import "../App.css";
 
 function CurrentAvailability() {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+        try {
+            const res = await fetch("https://parking-scraper.onrender.com/api/parking");
+            const json = await res.json();
+            setData(json.data);
+        } catch (err) {
+            console.error("Failed to fetch parking data:", err);
+        }
+        };
+
+        fetchData();
+        const interval = setInterval(fetchData, 60000); // refresh every 60s
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div>
-            <h1 className="font-bold">Available Parking Spaces</h1>
+        <h1 className="font-bold">Available Parking Spaces</h1>
 
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a href="#" className="aps_link">Nutwood Structure</a><br/>
-                            <span className="details">Total Spots 2484<br/>2/28/2025 6:38:00 PM</span><br/>
-                        </td>
-                        <td className="spots">1980</td>
-                        <td><a href="#" className="aps_link">Levels (1)</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <a href="#" className="aps_link">State College Structure</a><br/>
-                            <span className="details">Total Spots 1373<br/>2/28/2025 6:38:00 PM</span><br/>
-                        </td>
-                        <td className="spots">1204</td>
-                        <td><a href="#" className="aps_link">Levels (2)</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <a href="#" className="aps_link">Eastside North</a><br/>
-                            <span className="details">Total Spots 1880<br/>2/28/2025 6:38:00 PM</span><br/>
-                        </td>
-                        <td className="spots">1719</td>
-                        <td><a href="#" className="aps_link">Levels (3)</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <a href="#" className="aps_link">Eastside South</a><br/>
-                            <span className="details">Total Spots 1341<br/>2/28/2025 6:38:00 PM</span><br/>
-                        </td>
-                        <td className="spots">1335</td>
-                        <td><a href="#" className="aps_link">Levels (4)</a></td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <a href="#" className="aps_link">Lot A & G</a><br/>
-                            <span className="details">Total Spots 2104<br/>2/28/2025 6:38:00 PM</span><br/>
-                        </td>
-                        <td className="spots">1336</td>
-                        <td><a href="#" className="aps_link">Levels (5)</a></td>
-                    </tr>
-                </tbody>
-            </table>
+        <table>
+            <tbody>
+            {data.map((structure, index) => (
+                <tr key={index}>
+                <td>
+                    <a href="#" className="aps_link">{structure.structure}</a><br />
+                    <span className="details">
+                    Total Spots {structure.totalSpots}<br />
+                    {structure.lastUpdated}
+                    </span><br />
+                </td>
+                <td className="spots">{structure.availableSpots}</td>
+                <td>
+                    <a href="#" className="aps_link">Levels ({index + 1})</a>
+                </td>
+                </tr>
+            ))}
+            </tbody>
+        </table>
         </div>
     );
 }

@@ -1,32 +1,54 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 
 const SvgMap = (props) => {
-  const values = {
-    LotAG: 1052,
-    SCPS: 544,
-    NPS: 423,
-    EPSS: 70,
-    EPSN: 145,
+  const [values, setValues] = useState({
+    LotAG: 0,
+    SCPS: 0,
+    NPS: 0,
+    EPSS: 0,
+    EPSN: 0,
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("https://parking-scraper.onrender.com/api/parking");
+        const json = await res.json();
+
+        const updatedValues = {
+          LotAG: getSpots(json.data, "Lot A & G"),
+          SCPS: getSpots(json.data, "State College Structure"),
+          NPS: getSpots(json.data, "Nutwood Structure"),
+          EPSS: getSpots(json.data, "Eastside South"),
+          EPSN: getSpots(json.data, "Eastside North"),
+        };
+
+        setValues(updatedValues);
+      } catch (err) {
+        console.error("Error fetching parking data:", err);
+      }
+    };
+
+    fetchData();
+    const interval = setInterval(fetchData, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getSpots = (data, name) => {
+    const match = data.find(item => item.structure === name);
+    return match ? (match.availableSpots === "Open" ? 9999 : parseInt(match.availableSpots)) : 0;
   };
 
-  // Function to determine fill color based on value
   const getFillColor = (id) => {
-    if (values[id] !== undefined && values[id] >= 1000) {
-      return "#ffaaaa";
-    }
-    else if (values[id] !== undefined && values[id] < 1000 && values[id] > 500) {
-      return "#ff8080";
-    }
-    else if (values[id] !== undefined && values[id] <= 500 && values[id] > 150) {
-      return "#ff5050";
-    }
-    else if (values[id] !== undefined && values[id] <= 150) {
-      return "#ff2a2a";
-    }
+    const val = values[id];
+    if (val >= 1000) return "#ffaaaa";
+    if (val > 500) return "#ff8080";
+    if (val > 150) return "#ff5050";
+    return "#ff2a2a";
   };
 
-  const [hovered, setHovered] = React.useState(null);
-  const [cursorPosition, setCursorPosition] = React.useState({ x: 0, y: 0 });
+  const [hovered, setHovered] = useState(null);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (event) => {
     setCursorPosition({ x: event.clientX, y: event.clientY });
