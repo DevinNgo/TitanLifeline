@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 
 function CurrentAvailability() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,25 +16,40 @@ function CurrentAvailability() {
         };
 
         fetchData();
-        const interval = setInterval(fetchData, 60000); // refresh every 60s
+        const interval = setInterval(fetchData, 60000);
 
         return () => clearInterval(interval);
     }, []);
 
+    if (data === null) {
+        return (
+        <div>
+            <h1 className="font-bold">Available Parking Spaces</h1>
+            <p>Loading...</p>
+        </div>
+        );
+    }
+
     return (
         <div>
         <h1 className="font-bold">Available Parking Spaces</h1>
-
         <table>
             <tbody>
             {data.map((structure, index) => (
                 <tr key={index}>
                 <td>
-                    <a href="#" className="aps_link">{structure.structure}</a><br />
+                    <a href="#" className="aps_link">{structure.structure}</a>
+                    <br/>
                     <span className="details">
-                    Total Spots {structure.totalSpots}<br />
-                    {structure.lastUpdated}
-                    </span><br />
+                    Total Spots {structure.totalSpots}
+                    <br/>
+                    {
+                        structure.structure === "Fullerton Free Church"
+                        ? "01/21/2025 - 05/08/2025"
+                        : structure.lastUpdated
+                    }
+                    </span> 
+                    <br/>
                 </td>
                 <td className="spots">{structure.availableSpots}</td>
                 <td>
