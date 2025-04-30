@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 
-let selectedTime = null; //use selectedTime to GET selectedTime from flask backend API after button is pressed
+export default function BasicTimePicker({value, onChange}) {
+  const [time, setTime] = useState(value || null); 
 
-export default function BasicTimePicker() {
-  const [time, setTime] = useState(null); // Local state for UI updates
+  useEffect(() => setTime(value), [value]);
 
   const handleTimeChange = (newValue) => {
-    selectedTime = newValue; // Update global variable
     setTime(newValue); // Update local state for UI
-    console.log(selectedTime);
+    onChange(newValue);
   };
 
   return (

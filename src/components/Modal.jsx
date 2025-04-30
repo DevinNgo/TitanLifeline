@@ -4,9 +4,15 @@ import "./Modal.css";
 
 export default function Modal() {
     const [modal, setModal] = useState(false);
+    const [selectedTime, setSelectedTime] = useState(null);
 
     const toggleModal = () => {
         setModal(!modal);
+    };
+
+    const handleSearch = () => {
+        const t = selectedTime.format("HH:mm:ss")
+        window.location.href = `/prediction?time=${encodeURIComponent(t)}`; // URL for prediction
     };
 
     if(modal) {
@@ -27,8 +33,14 @@ export default function Modal() {
             <div className="modal-content">
                 <h2>Check future parking availability</h2>
                 <div className="select-time py-4">
-                    <BasicTimePicker/>
+                    <BasicTimePicker
+                        value = {selectedTime}
+                        onChange = {setSelectedTime}
+                    />
                 </div>
+                <button className="close-modal bg-indigo-300 hover:bg-indigo-400 text-white font-bold py-2 px-4 rounded" onClick={handleSearch} disabled={!selectedTime}>
+                    SEARCH
+                </button>
                 <button className="close-modal bg-indigo-300 hover:bg-indigo-400 text-white font-bold py-2 px-4 rounded" onClick={toggleModal}>
                     CLOSE
                 </button>
