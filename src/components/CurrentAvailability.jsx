@@ -52,9 +52,6 @@ function CurrentAvailability() {
                     <br/>
                 </td>
                 <td className="spots">{structure.availableSpots}</td>
-                <td>
-                    <a href="#" className="aps_link">Levels ({index + 1})</a>
-                </td>
                 </tr>
             ))}
             </tbody>

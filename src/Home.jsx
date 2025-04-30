@@ -11,10 +11,10 @@ function Home() {
         <Modal/>
       </div>
       <div className="flex justify-center pt-4 divide-x-2 divide-gray-200">
-          <div className="px-4 hidden md:block">
+          <div className="px-4 hidden lg:block">
             <SvgMap/>
           </div>
-          <div className="px-4 hidden md:block">
+          <div className="px-4 hidden lg:block">
             <Legend/>
           </div>
           <div className="px-4 hidden lg:block">
@@ -22,7 +22,13 @@ function Home() {
           </div>
       </div>
       <div className="flex justify-center border p-4 lg:hidden">
+        <SvgMap/>
+      </div>
+      <div className="flex justify-center border p-4 lg:hidden">
         <CurrentAvailability/>
+      </div>
+      <div className="flex justify-center border p-4 lg:hidden">
+        <Legend/>
       </div>
     </div>
   )

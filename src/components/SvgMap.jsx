@@ -41,9 +41,9 @@ const SvgMap = (props) => {
 
   const getFillColor = (id) => {
     const val = values[id];
-    if (val >= 1000) return "#ffaaaa";
+    if (val >= 1000) return "#ff5050";
     if (val > 500) return "#ff8080";
-    if (val > 150) return "#ff5050";
+    if (val > 150) return "#ffaaaa";
     return "#ff2a2a";
   };
 
