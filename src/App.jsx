@@ -6,6 +6,7 @@ import Header from "./components/Header.jsx";
 import Home from "./Home";
 import Login from "./Login";
 import Prediction from "./Prediction";
+import Contact from "./components/Contact.jsx";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/prediction" element={<Prediction />} />
           </Routes>
+        </div>
+        <div className="feedback text-center my-4">
+          <Contact />
         </div>
       </div>
     </BrowserRouter>
